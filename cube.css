@@ -1,5 +1,5 @@
 #cc {
-	perspective: 1000px;
+	perspective: 100vmin
 	pointer-events: none;
 	display: flex;
 	align-items: center;
@@ -63,10 +63,10 @@
 	border-color: #444;
 }
 .cube:nth-of-tyoe(3) {
-	--ct: -1px, -1px, 1px;
+	--ct: -1px, 1px, -1px;
 }
 .cube:nth-of-type(6) {
-	--ct: 1px, 1px, -1px;
+	--ct: 1px, 1px, 1px;
 }
 .cube:nth-of-type(9) {
 	border-width: 5px 5px 0 0;
