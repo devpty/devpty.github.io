@@ -1,4 +1,4 @@
-(function() {
+window.onload = function() {
 	var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 	var animate = !mediaQuery.matches;
 	mediaQuery.onchange = function() {
@@ -105,4 +105,4 @@
 			return false;
 		});
 	}
-})();
+};
