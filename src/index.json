@@ -1,0 +1,5 @@
+{
+	"type": "ring",
+	"title": "home",
+	"pages": ["about_us", "games", "projects", "members", "sitemap", "this:index"]
+}
