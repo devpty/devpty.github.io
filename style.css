@@ -21,7 +21,7 @@ a {
 	/* animation-name: start; */
 	animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 	animation-direction: normal;
-	animation-iteration-count: 0;
+	animation-iteration-count: 1;
 	animation-duration: 1000ms;
 	animation-fill-mode: forwards;
 	color: var(--fg);
