@@ -109,5 +109,5 @@
 		if (animate)
 			for (var i = 0; i < links.length; i++)
 				link.style.animationName = "start";
-	}, 50);
+	}, 500);
 })();
