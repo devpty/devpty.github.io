@@ -54,7 +54,7 @@ a:active {
 
 @keyframes stop {
 	0% {
-		transform: translate(calc(var(--x) * 45vmin), calc(var(--y) * 45vmin));
+		transform: translate(calc(var(--x) * 40vmin), calc(var(--y) * 40vmin));
 		opacity: 1;
 	}
 	50% {
