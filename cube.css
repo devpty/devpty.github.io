@@ -68,7 +68,7 @@
 }
 .cube:nth-of-type(9) {
 	border-width: 5px 5px 0 0;
-	--ct: 50px, 100px, -1px;
+	--ct: 1px, -1px, -1px;
 }
 .cube:nth-of-type(1),
 .cube:nth-of-type(5),
