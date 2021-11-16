@@ -93,10 +93,10 @@
 					link.style.animationTimingFunction = "cubic-bezier(0.55, 0.085, 0.68, 0.53)";
 				}
 			}
-			// var elem = document.createElement("link");
-			// elem.rel = "prefetch";
-			// elem.href = this.href;
-			// document.head.appendChild(elem);
+			var elem = document.createElement("link");
+			elem.rel = "prefetch";
+			elem.href = this.href;
+			document.head.appendChild(elem);
 			setTimeout(function() {
 				location = go;
 			}, 500);
