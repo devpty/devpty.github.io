@@ -1,4 +1,4 @@
-window.onload = function() {
+(function() {
 	var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 	var animate = !mediaQuery.matches;
 	mediaQuery.onchange = function() {
@@ -110,4 +110,4 @@ window.onload = function() {
 			for (var i = 0; i < links.length; i++)
 				link.style.animationName = "start";
 	}, 50);
-};
+})();
