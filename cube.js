@@ -103,9 +103,13 @@
 			return false;
 		});
 	}
-	setTimeout(function() {
-		if (animate)
+	if (animate) {
+		for (var i = 0; i < links.length; i++)
+			links[i].style.opacity = "0";
+		// browser jank
+		setTimeout(function() {
 			for (var i = 0; i < links.length; i++)
 				links[i].style.animationName = "start";
-	}, 0);
+		}, 50);
+	}
 })();
