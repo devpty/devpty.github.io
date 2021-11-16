@@ -51,9 +51,12 @@
 .cube:nth-of-type(6) {
 	--cf: 2;
 }
-.cube.cube:nth-of-type(1),
-.cube.cube:nth-of-type(4),
-.cube.cube:nth-of-type(5) {
-	border-color: #444;
+.cube:nth-of-type(1),
+.cube:nth-of-type(4),
+.cube:nth-of-type(5) {
+	border-color: #fff #444 #444 #fff;
 	border-width: 5px;
+}
+.cube:nth-of-type(5) {
+	border-color: #444 #444 #fff #fff;
 }
