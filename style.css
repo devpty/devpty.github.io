@@ -18,7 +18,7 @@ body {
 	position: fixed;
 }
 a {
-	/* animation-name: start; */
+	animation-name: none;
 	animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 	animation-direction: normal;
 	animation-iteration-count: 1;
