@@ -1,46 +1,99 @@
-var cc = document.createElement("div");
-cc.id = "cc";
-document.body.appendChild(cc);
-var cube = document.createElement("div");
-cube.id = "cube";
-cc.appendChild(cube);
-for (let i = 0; i < 6; i++) {
-	var c = document.createElement("div");
-	c.className = "cube";
-	cube.appendChild(c);
-}
-var targetX = 0;
-var targetY = 0;
-var currentX = 0;
-var currentY = 0;
-var cssX = 0;
-var cssY = 0;
-var lt = 0;
-window.addEventListener("mousemove", function cubeUpdate(ev) {
-	var posX = ev.clientX / window.innerWidth;
-	var posY = ev.clientY / window.innerHeight;
-	targetX = (posX - 0.5) * 25;
-	targetY = (posY - 0.5) * 25;
-});
-window.addEventListener("mouseout", function cubeExit() {
-	targetX = 0;
-	targetY = 0;
-});
-function lerp(a, b, t) {
-	return a * (1 - t) + b * t;
-}
-function lc(a, b, t) {
-	return lerp(a, b, Math.min(Math.max(t, 0), 1));
-}
-function frame(time) {
-	const dt = (time - lt) / 100;
-	lt = time;
-	currentX = lc(currentX, targetX, dt);
-	currentY = lc(currentY, targetY, dt);
-	if (cssX !== currentX)
-		cube.style.setProperty("--x", (cssX = currentX) + "deg");
-	if (cssY !== currentY)
-		cube.style.setProperty("--y", -(cssY = currentY) + "deg");
-	requestAnimationFrame(frame);
-}
-requestAnimationFrame(frame);
+(function() {
+	var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+	var animate = !mediaQuery.matches;
+	mediaQuery.onchange = function() {
+		animate = !mediaQuery.matches;
+	}
+	var cube = document.getElementById("cube");
+	var targetX = 0;
+	var targetY = 0;
+	var currentX = 0;
+	var currentY = 0;
+	var cssX = 1;
+	var cssY = 1;
+	var lt = 0;
+	var winW = 0;
+	var winH = 0;
+	var winS = 0;
+	var first = true;
+	var go = null;
+	var running = 0;
+	function start() {
+		if (!running) {
+			running = 3;
+			frame();
+		}
+	}
+	function windowUpdate() {
+		winW = window.innerWidth;
+		winH = window.innerHeight;
+		winS = Math.min(winW, winH);
+	}
+	window.addEventListener("resize", windowUpdate);
+	windowUpdate();
+	window.addEventListener("mousemove", function (ev) {
+		if (!go)
+			targetX = (2 * ev.clientX - winW) / winS,
+			targetY = (2 * ev.clientY - winH) / winS;
+		start();
+	});
+	window.addEventListener("mouseout", function () {
+		targetX = targetY = 0;
+		start();
+	});
+	function lerp(a, b, t) {
+		return a * (1 - t) + b * t;
+	}
+	function lc(a, b, t) {
+		return lerp(a, b, Math.min(Math.max(t, 0), 1));
+	}
+	function frame(time) {
+		var dt = (time - lt) / 100;
+		lt = time;
+		if (running > 1) {
+			running--;
+			requestAnimationFrame(frame);
+			return;
+		}
+		if (first) {
+			first = false;
+			cube.style.transform = "rotateY(calc(15 * var(--x))) rotateX(calc(-15 * var(--y))) rotateX(35deg) rotateY(45deg)";
+		}
+		if (animate)
+			currentX = lc(currentX, targetX, dt),
+			currentY = lc(currentY, targetY, dt);
+		else
+			currentX = currentY = 0;
+		var change = false;
+		if (Math.abs(cssX - currentX) > 1e-5) {
+			change = true;
+			cube.style.setProperty("--x", (cssX = currentX) + "deg");
+		}
+		if (Math.abs(cssY - currentY) > 1e-5) {
+			change = true;
+			cube.style.setProperty("--y", (cssY = currentY) + "deg");
+		}
+		if (change)
+			requestAnimationFrame(frame);
+		else
+			running = 0;
+	}
+	var links = document.body.getElementsByTagName("a");
+	for (let i = 0; i < links.length; i++) {
+		var link = links[i];
+		var url = link.href;
+		link.onclick = function() {
+			targetX = targetY = 0;
+			start();
+			go = url;
+			var elem = document.createElement("link");
+			elem.rel = "prefetch";
+			elem.href = url;
+			document.head.appendChild(elem);
+			setTimeout(function() {
+				location = url;
+			}, 300);
+			return false;
+		}
+	}
+})();

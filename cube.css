@@ -4,8 +4,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,13 +17,13 @@
 	height: var(--size);
 	width: var(--size);
 	position: relative;
-	transform: rotateY(var(--x)) rotateX(var(--y)) rotateX(35deg) rotateY(45deg);
+	transform: rotateX(35deg) rotateY(45deg);
 	transform-style: preserve-3d;
 }
 .cube {
 	box-sizing: border-box;
-	border: 0.25vmin solid white;
-	background-color: #000B;
+	border: 0.25vmin solid var(--fg);
+	background-color: #000C;
 	position: absolute;
 	height: calc(var(--size) + 1px);
 	width: calc(var(--size) + 1px);
