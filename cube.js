@@ -57,7 +57,7 @@
 		}
 		if (first) {
 			first = false;
-			cube.style.transform = "rotateY(calc(6 * var(--x))) rotateX(calc(-6 * var(--y))) rotateX(-35.264389682754deg) rotateY(45deg)";
+			cube.style.transform = "rotateY(calc(25 * var(--x))) rotateX(calc(-25 * var(--y))) rotateX(-35.264389682754deg) rotateY(45deg)";
 		}
 		if (animate)
 			currentX = lc(currentX, targetX, dt),
