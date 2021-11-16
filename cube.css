@@ -60,9 +60,11 @@
 .cube:nth-of-type(6),
 .cube:nth-of-type(9) {
 	border-color: #444;
+}
+.cube:nth-of-tyoe(3) {
 	border-width: 0 5px 5px 0;
 	--ct: 1px, 1px, 1px;
-},
+}
 .cube:nth-of-type(6) {
 	--ct: 1px, 1px, -1px;
 }
