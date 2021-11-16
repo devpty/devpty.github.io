@@ -63,7 +63,7 @@
 	border-color: #444;
 }
 .cube:nth-of-type(3) {
-	--ct: -1px, 1px, -1px;
+	--ct: 1px, 1px, -1px;
 }
 .cube:nth-of-type(6) {
 	--ct: 1px, 1px, 1px;
