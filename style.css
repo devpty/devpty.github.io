@@ -1,0 +1,27 @@
+body {
+	background-color: black;
+	color: white;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.links {
+	font-size: 32px;
+	font-family: "DOS-V", monospace;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+}
+a {
+	color: white;
+	position: absolute;
+	transform: translate(calc(var(--x) * 100vmin), calc(var(--y) * 100vmin));
+}
+
+@font-face {
+	font-family: "DOS-V";
+	src: url("./font.woff");
+}
