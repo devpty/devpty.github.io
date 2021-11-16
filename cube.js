@@ -88,8 +88,6 @@
 			targetX = targetY = 0;
 			start();
 			go = this.href;
-			var elem = document.createElement("link");
-			elem.rel = "prefetch";
 			if (animate) {
 				for (var j = 0; j < links.length; j++) {
 					var link = links[j];
@@ -97,8 +95,10 @@
 					link.style.animationTimingFunction = "cubic-bezier(0.55, 0.085, 0.68, 0.53)";
 				}
 			}
-			elem.href = this.href;
-			document.head.appendChild(elem);
+			// var elem = document.createElement("link");
+			// elem.rel = "prefetch";
+			// elem.href = this.href;
+			// document.head.appendChild(elem);
 			setTimeout(function() {
 				location = go;
 			}, 500);
