@@ -23,6 +23,7 @@
 .cube {
 	box-sizing: border-box;
 	border: 3px solid var(--fg);
+	background-color: #000D;
 	position: absolute;
 	height: calc(var(--size) + 1px);
 	width: calc(var(--size) + 1px);
@@ -54,6 +55,5 @@
 .cube.cube:nth-of-type(1),
 .cube.cube:nth-of-type(4),
 .cube.cube:nth-of-type(5) {
-	border-color: #444;
 	border-width: 5px;
 }
