@@ -22,7 +22,7 @@
 }
 .cube {
 	box-sizing: border-box;
-	border: 0.25vmin solid var(--fg);
+	border: 2px solid var(--fg);
 	position: absolute;
 	height: calc(var(--size) + 1px);
 	width: calc(var(--size) + 1px);
