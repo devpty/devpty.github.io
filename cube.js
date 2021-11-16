@@ -79,19 +79,29 @@
 			running = 0;
 	}
 	var links = document.body.getElementsByTagName("a");
-	for (let i = 0; i < links.length; i++) {
-		links[i].addEventListener("click", function(ev) {
+	for (var i = 0; i < links.length; i++) {
+		var link = links[i];
+		if (animate)
+			link.style.animationName = "start";
+		link.addEventListener("click", function(ev) {
 			ev.preventDefault();
 			targetX = targetY = 0;
 			start();
 			go = this.href;
 			var elem = document.createElement("link");
 			elem.rel = "prefetch";
+			if (animate) {
+				for (var j = 0; j < links.length; j++) {
+					var link = links[j];
+					link.style.animationName = "stop";
+					link.style.animationTimingFunction = "cubic-bezier(0.55, 0.085, 0.68, 0.53)";
+				}
+			}
 			elem.href = this.href;
 			document.head.appendChild(elem);
 			setTimeout(function() {
 				location = go;
-			}, 300);
+			}, 500);
 			return false;
 		});
 	}

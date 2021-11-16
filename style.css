@@ -18,9 +18,43 @@ body {
 	position: fixed;
 }
 a {
+	/* animation-name: start; */
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+	animation-duration: 1000ms;
+	animation-fill-mode: forwards;
 	color: var(--fg);
 	position: absolute;
 	transform: translate(calc(var(--x) * 45vmin), calc(var(--y) * 45vmin));
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: underline;
+}
+
+@keyframes start {
+	0% {
+		transform: translate(0, 0);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(calc(var(--x) * 45vmin), calc(var(--y) * 45vmin));
+		opacity: 1;
+	}
+}
+
+@keyframes stop {
+	0% {
+		transform: translate(calc(var(--x) * 45vmin), calc(var(--y) * 45vmin));
+		opacity: 1;
+	}
+	50% {
+		transform: translate(0, 0);
+		opacity: 0;
+	}
 }
 
 @font-face {
