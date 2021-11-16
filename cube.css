@@ -17,7 +17,7 @@
 	height: var(--size);
 	width: var(--size);
 	position: relative;
-	transform: rotateX(35deg) rotateY(45deg);
+	transform: rotateX(-35.264389682754deg) rotateY(45deg);
 	transform-style: preserve-3d;
 }
 .cube {
