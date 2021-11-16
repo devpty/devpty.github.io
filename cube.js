@@ -80,20 +80,18 @@
 	}
 	var links = document.body.getElementsByTagName("a");
 	for (let i = 0; i < links.length; i++) {
-		var link = links[i];
-		var url = link.href;
-		link.onclick = function() {
+		links[i].addEventListener("click", function(ev) {
+			ev.preventDefault();
 			targetX = targetY = 0;
 			start();
-			go = url;
-			var elem = document.createElement("link");
+			go = this.href;
 			elem.rel = "prefetch";
-			elem.href = url;
+			elem.href = this.href;
 			document.head.appendChild(elem);
 			setTimeout(function() {
-				location = url;
+				location = this.href;
 			}, 300);
 			return false;
-		}
+		});
 	}
 })();
