@@ -1,4 +1,4 @@
-window.onload = function() {
+setTimeout(function() {
 	var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 	var animate = !mediaQuery.matches;
 	mediaQuery.onchange = function() {
@@ -81,6 +81,7 @@ window.onload = function() {
 	var links = document.body.getElementsByTagName("a");
 	for (var i = 0; i < links.length; i++) {
 		var link = links[i];
+		console.log("start", link);
 		if (animate)
 			link.style.animationName = "start";
 		link.addEventListener("click", function(ev) {
@@ -105,4 +106,4 @@ window.onload = function() {
 			return false;
 		});
 	}
-};
+}, 100);
