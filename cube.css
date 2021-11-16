@@ -23,7 +23,7 @@
 .cube {
 	--ct: 0, 0, 0;
 	box-sizing: border-box;
-	border: 3px solid var(--fg);
+	border: 2px solid var(--fg);
 	position: absolute;
 	height: calc(var(--size) + 1px);
 	width: calc(var(--size) + 1px);
@@ -59,7 +59,7 @@
 .cube:nth-of-type(3),
 .cube:nth-of-type(6),
 .cube:nth-of-type(9) {
-	border-width: 0 5px 5px 0;
+	border-width: 0 2px 2px 0;
 	border-color: #444;
 }
 .cube:nth-of-type(3) {
@@ -69,14 +69,14 @@
 	--ct: 1px, 1px, 1px;
 }
 .cube:nth-of-type(9) {
-	border-width: 5px 5px 0 0;
+	border-width: 2px 2px 0 0;
 	--ct: 1px, -1px, -1px;
 }
 .cube:nth-of-type(1),
 .cube:nth-of-type(5),
 .cube:nth-of-type(7) {
-	border-width: 5px 0 0 5px;
+	border-width: 2px 0 0 2px;
 }
 .cube:nth-of-type(7) {
-	border-width: 0 0 5px 5px;
+	border-width: 0 0 2px 2px;
 }
