@@ -1,4 +1,4 @@
-setTimeout(function() {
+window.onload = function() {
 	var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 	var animate = !mediaQuery.matches;
 	mediaQuery.onchange = function() {
@@ -105,4 +105,9 @@ setTimeout(function() {
 			return false;
 		});
 	}
-}, 50);
+	setTimeout(function() {
+		if (animate)
+			for (var i = 0; i < links.length; i++)
+				link.style.animationName = "start";
+	}, 50);
+};
