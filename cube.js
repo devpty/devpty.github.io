@@ -105,4 +105,4 @@ setTimeout(function() {
 			return false;
 		});
 	}
-}, 0);
+}, 50);
