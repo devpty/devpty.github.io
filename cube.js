@@ -81,7 +81,6 @@ setTimeout(function() {
 	var links = document.body.getElementsByTagName("a");
 	for (var i = 0; i < links.length; i++) {
 		var link = links[i];
-		console.log("start", link);
 		if (animate)
 			link.style.animationName = "start";
 		link.addEventListener("click", function(ev) {
@@ -106,4 +105,4 @@ setTimeout(function() {
 			return false;
 		});
 	}
-}, 100);
+}, 0);
