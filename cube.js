@@ -27,7 +27,7 @@
 	function windowUpdate() {
 		winW = window.innerWidth;
 		winH = window.innerHeight;
-		winS = Math.max(winW, winH);
+		winS = Math.sqrt(winW * winH);
 	}
 	window.addEventListener("resize", windowUpdate);
 	windowUpdate();
