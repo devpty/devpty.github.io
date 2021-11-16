@@ -81,8 +81,6 @@
 	var links = document.body.getElementsByTagName("a");
 	for (var i = 0; i < links.length; i++) {
 		var link = links[i];
-		if (animate)
-			link.style.animationName = "start";
 		link.addEventListener("click", function(ev) {
 			ev.preventDefault();
 			targetX = targetY = 0;
