@@ -85,11 +85,12 @@
 			targetX = targetY = 0;
 			start();
 			go = this.href;
+			var elem = document.createElement("link");
 			elem.rel = "prefetch";
 			elem.href = this.href;
 			document.head.appendChild(elem);
 			setTimeout(function() {
-				location = this.href;
+				location = go;
 			}, 300);
 			return false;
 		});
