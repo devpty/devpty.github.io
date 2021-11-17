@@ -1,6 +1,7 @@
 body {
-	--bg: black;
-	--fg: white;
+	--bg: #000;
+	--fg: #fff;
+	--mix: #222;
 	background-color: var(--bg);
 	color: var(--fg);
 	min-height: 100vh;
@@ -22,7 +23,7 @@ a {
 	animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 	animation-direction: normal;
 	animation-iteration-count: 1;
-	animation-duration: 1000ms;
+	animation-duration: 1s;
 	animation-fill-mode: forwards;
 	color: var(--fg);
 	position: absolute;

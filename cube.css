@@ -21,79 +21,49 @@
 	animation-timing-function: linear;
 	animation-direction: normal;
 	animation-iteration-count: infinite;
-	animation-duration: 1000ms;
+	animation-duration: 1s;
+	animation-delay: -500ms;
 }
 @keyframes spin {
 	0% {
-		transform: rotateX(-35.264389682754deg) rotateY(45deg);
-	}
-	50% {
-		transform: rotateX(-35.264389682754deg) rotateY(0deg);
-	}
-	50.001% {
 		transform: rotateX(-35.264389682754deg) rotateY(90deg);
 	}
 	100% {
-		transform: rotateX(-35.264389682754deg) rotateY(45deg);
+		transform: rotateX(-35.264389682754deg) rotateY(0deg);
 	}
 }
 .cube {
+	--cf: -2;
 	--ct: 0, 0, 0;
 	box-sizing: border-box;
 	border: 2px solid var(--fg);
 	position: absolute;
 	height: calc(var(--size) + 1px);
 	width: calc(var(--size) + 1px);
+	border-radius: 0.75px;
 }
-.cube:nth-of-type(1),
-.cube:nth-of-type(2),
-.cube:nth-of-type(3) {
-	--cf: -2;
+.cube:nth-of-type(3n+1) {
 	transform: translate3d(0, 0, calc(var(--size) / var(--cf))) translate3d(var(--ct));
 }
-.cube:nth-of-type(2) {
-	--cf: 2;
+.cube:nth-of-type(3n+2) {
+	transform: rotateY(90deg) scaleZ(-1) translate3d(0, 0, calc(var(--size) / var(--cf))) translate3d(var(--ct));
 }
-.cube:nth-of-type(4),
-.cube:nth-of-type(5),
-.cube:nth-of-type(6) {
-	--cf: -2;
-	transform: rotateY(90deg) translate3d(0, 0, calc(var(--size) / var(--cf))) translate3d(var(--ct));
+.cube:nth-of-type(3n+3) {
+	transform: rotateX(90deg) rotateZ(-90deg) translate3d(0, 0, calc(var(--size) / var(--cf))) translate3d(var(--ct));
 }
-.cube:nth-of-type(5),
-.cube:nth-of-type(6) {
+.cube:nth-of-type(2n+2) {
 	--cf: 2;
 }
 .cube:nth-of-type(7),
 .cube:nth-of-type(8),
 .cube:nth-of-type(9) {
-	--cf: -2;
-	transform: rotateX(90deg) translate3d(0, 0, calc(var(--size) / var(--cf))) translate3d(var(--ct));
-}
-.cube:nth-of-type(8) {
-	--cf: 2;
-}
-.cube:nth-of-type(3),
-.cube:nth-of-type(6),
-.cube:nth-of-type(9) {
 	border-width: 0 2px 2px 0;
-	border-color: #444;
-}
-.cube:nth-of-type(3) {
-	--ct: 1px, 1px, -1px;
-}
-.cube:nth-of-type(6) {
-	--ct: 1px, 1px, 1px;
-}
-.cube:nth-of-type(9) {
-	border-width: 2px 2px 0 0;
-	--ct: 1px, -1px, -1px;
+	border-color: var(--mix);
+	--ct: 0.1px, 0.1px, -0.1px;
+	--cf: -2;
 }
 .cube:nth-of-type(1),
-.cube:nth-of-type(5),
-.cube:nth-of-type(7) {
+.cube:nth-of-type(3),
+.cube:nth-of-type(5) {
 	border-width: 2px 0 0 2px;
-}
-.cube:nth-of-type(7) {
-	border-width: 0 0 2px 2px;
 }
