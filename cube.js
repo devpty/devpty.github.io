@@ -21,8 +21,6 @@
 	function start() {
 		if (!running) {
 			running = 3;
-			console.log("start");
-			cube.style.animationName = "none";
 			frame();
 		}
 	}
@@ -57,15 +55,21 @@
 			requestAnimationFrame(frame);
 			return;
 		}
-		if (first) {
-			first = false;
-			cube.style.transform = "rotateY(calc(35 * var(--x))) rotateX(calc(-35 * var(--y))) rotateX(-35.264389682754deg) rotateY(45deg)";
-		}
 		if (animate)
 			currentX = lc(currentX, targetX, dt),
 			currentY = lc(currentY, targetY, dt);
 		else
 			currentX = currentY = 0;
+		if (first) {
+			first = false;
+			cube.style.transform = "rotateX(calc(-35 * var(--y) - 35.264389682754deg)) rotateY(calc(35 * var(--x))) rotateY(45deg)";
+			const time = cube.getAnimations()[0].currentTime % 1000;
+			cube.style.animationName = "none";
+			const t = time > 500 ? (time - 1000) : time;
+			const tt = t * -0.07;
+			console.log(tt);
+			currentX = tt / 30;
+		}
 		var change = false;
 		if (Math.abs(cssX - currentX) > 1e-5) {
 			change = true;
@@ -79,7 +83,6 @@
 			requestAnimationFrame(frame);
 		} else {
 			running = 0;
-			cube.style.animationName = "spin";
 		}
 	}
 	var links = document.body.getElementsByTagName("a");
