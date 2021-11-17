@@ -17,6 +17,25 @@
 	position: relative;
 	transform: rotateX(-35.264389682754deg) rotateY(45deg);
 	transform-style: preserve-3d;
+	animation-name: spin;
+	animation-timing-function: linear;
+	animation-direction: normal;
+	animation-iteration-count: infinite;
+	animation-duration: 1000ms;
+}
+@keyframes spin {
+	0% {
+		transform: rotateX(-35.264389682754deg) rotateY(45deg);
+	}
+	50% {
+		transform: rotateX(-35.264389682754deg) rotateY(0deg);
+	}
+	50.1% {
+		transform: rotateX(-35.264389682754deg) rotateY(90deg);
+	}
+	100% {
+		transform: rotateX(-35.264389682754deg) rotateY(45deg);
+	}
 }
 .cube {
 	--ct: 0, 0, 0;
