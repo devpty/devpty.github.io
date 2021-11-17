@@ -1,3 +1,5 @@
+// deno-lint-ignore-file
+/// <reference lib="dom" />
 (function() {
 	var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 	var animate = !mediaQuery.matches;
