@@ -24,42 +24,45 @@ const templates = {
 		<meta name="referrer" content="no-referrer">
 		<meta name="viewport" scale=1.0">
 		<title>/DEV/PTY</title>
-		<link rel="stylesheet" href="${d}style.css">
-		<link rel="stylesheet" href="${d}cube.css">
+		<link rel="stylesheet" href="${d}static/style.css">
+		<link rel="stylesheet" href="${d}static/cube.css">
 	</head>
 	<body>
 		<div id="cc"><div id="cube"><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div></div></div>
-		<div class="links">\n`,
-	title: (a: string) => `\t\t<a style="--x:0;--y:-1";>${a}</a>\n`,
-	link: (a: string, b: string, c: string) => `\t\t<a style="${a}"; href="${c}">${b}</a>\n`,
+		<div id="links">\n`,
+	link: (a: string, b: string, c: string, d: string) => `\t\t\t<${d} style="${a}"${c}>${b}</${d}>\n`,
 	end: (d: string) => `
 		</div>
-		<script src="${d}cube.js"></script>
+		<script src="${d}static/cube.js"></script>
 	</body>
-</html>`
+</html>`.slice(1)
 };
 
 export function GenRing(conf: RingConf, depth: number) {
 	// todo: do the to
 	const d = `../`.repeat(depth);
-	let out = templates.start(d) + templates.title(conf.title.toUpperCase());
 	const pos = GenPoints(conf.pages.length);
+	let out = templates.start(d) + templates.link(pos[0], conf.title.toUpperCase(), ``, `span`);
 	for (let i = 0; i < conf.pages.length; i++) {
 		const page = conf.pages[i];
 		const split = page.split(`:`);
 		let title = `page`;
-		let path = `out/${page}.html`;
+		let path = `${page}.html`;
+		let ring = ``;
 		if (split.length === 2) {
 			title = split[0];
-			path = `out/${split[1]}.html`;
+			path = `${split[1]}.html`;
 		} else {
-			const data = GetFile<RingConf>(page);
-			if (data)
+			const data = GetFile(page);
+			if (data) {
 				title = data.title;
-			else
+				if (data.type !== `ring`)
+					ring = ` data-ring="1"`;
+			} else {
 				path = `static/404.html`;
+			}
 		}
-		out += templates.link(pos[i], title.toUpperCase(), `${d}${path}`);
+		out += templates.link(pos[i + 1], title.toUpperCase(), ` href="${d}${path}"${ring}`, `a`);
 	}
 	return out + templates.end(d);
 }
