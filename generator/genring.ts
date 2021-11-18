@@ -26,6 +26,7 @@ const templates = {
 		<title>/DEV/PTY</title>
 		<link rel="stylesheet" href="${d}static/style.css">
 		<link rel="stylesheet" href="${d}static/cube.css">
+		<link rel="stylesheet" href="${d}static/cube/spin.css">
 	</head>
 	<body>
 		<div id="cc"><div id="cube"><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div><div class="cube"></div></div></div>
@@ -46,7 +47,7 @@ export function GenRing(conf: RingConf, depth: number) {
 	for (let i = 0; i < conf.pages.length; i++) {
 		const page = conf.pages[i];
 		const split = page.split(`:`);
-		let title = `page`;
+		let title = page.replaceAll(`_`, ` `);
 		let path = `${page}.html`;
 		let ring = ``;
 		if (split.length === 2) {
