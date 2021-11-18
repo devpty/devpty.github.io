@@ -157,11 +157,11 @@
 				if (this.getAttribute("data-ring"))
 					cube.style.animationName = "exit";
 			}
-			var elem = document.createElement("link");
-			elem.rel = "prefetch";
+			// var elem = document.createElement("link");
+			// elem.rel = "prefetch";
+			// elem.href = this.href;
+			// document.head.appendChild(elem);
 			localStorage.setItem("last-page", location.toString());
-			elem.href = this.href;
-			document.head.appendChild(elem);
 			setTimeout(function() {
 				location = go;
 			}, 500);
