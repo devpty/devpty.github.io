@@ -157,10 +157,10 @@
 				if (this.getAttribute("data-ring"))
 					cube.style.animationName = "exit";
 			}
-			// var elem = document.createElement("link");
-			// elem.rel = "prefetch";
-			// elem.href = this.href;
-			// document.head.appendChild(elem);
+			var elem = document.createElement("link");
+			elem.rel = "prefetch";
+			elem.href = this.href;
+			document.head.appendChild(elem);
 			localStorage.setItem("last-page", location.toString());
 			setTimeout(function() {
 				location = go;
