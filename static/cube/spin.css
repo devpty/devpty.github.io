@@ -1,0 +1,12 @@
+#cube {
+	animation-name: spin;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateX(-35.264389682754deg) rotateY(90deg);
+	}
+	100% {
+		transform: rotateX(-35.264389682754deg) rotateY(0deg);
+	}
+}
