@@ -169,13 +169,8 @@
 		});
 	}
 	if (animate && localStorage.getItem("last-page")) {
+		localStorage.removeItem("last-page");
 		for (var i = 0; i < links.length; i++)
-			links[i].style.opacity = "0";
-		// browser jank
-		setTimeout(function() {
-			localStorage.removeItem("last-page");
-			for (var i = 0; i < links.length; i++)
-				links[i].style.animationName = "start";
-		}, 50);
+			links[i].style.animationName = "start";
 	}
 })();
