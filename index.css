@@ -1,0 +1,39 @@
+@import url("./assets/common.css");
+#video {
+    min-height: 100vh;
+}
+@media screen and (min-aspect-ratio: 4/3) {
+    #video {
+        min-width: 100vw;
+    }
+}
+#videobox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+}
+body {
+    background-color: #6940ff;
+}
+#logobox {
+    position: absolute;
+    top: 24px;
+    left: 40px;
+    font-family: 'SoyuzGrotesk', Helvetica, Arial, sans-serif;
+    font-size: 60px;
+}
+a:hover, a:focus {
+    text-decoration: wavy underline;
+}
+#textbox {
+    position: absolute;
+    bottom: 24px;
+    right: 40px;
+    font-family: 'Sublima', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #fff;
+}

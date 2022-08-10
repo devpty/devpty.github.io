@@ -1,0 +1,15 @@
+@font-face {
+    font-weight: 400;
+    font-family: "SoyuzGrotesk";
+    src: url("./SoyuzGroteskBold.woff");
+}
+@font-face {
+    font-weight: 700;
+    font-family: "Sublima";
+    src: url("./Sublima-ExtraBold.otf");
+}
+@font-face {
+    font-weight: 300;
+    font-family: "Sublima";
+    src: url("./Sublima-Light.otf");
+}
