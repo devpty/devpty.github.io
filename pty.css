@@ -38,6 +38,10 @@ body {
     width: calc(100vw - 24px);
     box-sizing: border-box;
 }
+#logobox > span {
+    color: transparent;
+    user-select: none;
+}
 #logobox > a {
-    color: #fff;
+    color: #6940ff;
 }

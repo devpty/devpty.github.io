@@ -13,6 +13,10 @@
     font-family: "Sublima";
     src: url("./Sublima-Light.otf");
 }
+.logo {
+    font-family: 'SoyuzGrotesk', Helvetica, Arial, sans-serif;
+    font-size: 60px;
+}
 .logo:hover, .logo:focus {
     text-decoration: wavy underline;
 }
