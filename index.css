@@ -17,6 +17,7 @@
 }
 body {
     background-color: #6940ff;
+    overflow: hidden;
 }
 #logobox {
     position: absolute;
@@ -24,9 +25,6 @@ body {
     left: 40px;
     font-family: 'SoyuzGrotesk', Helvetica, Arial, sans-serif;
     font-size: 60px;
-}
-a:hover, a:focus {
-    text-decoration: wavy underline;
 }
 #textbox {
     position: absolute;
