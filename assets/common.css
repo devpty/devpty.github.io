@@ -1,22 +1,22 @@
 @font-face {
-    font-weight: 400;
-    font-family: "SoyuzGrotesk";
-    src: url("./SoyuzGroteskBold.woff");
+	font-weight: 400;
+	font-family: "SoyuzGrotesk";
+	src: url("./SoyuzGroteskBold.woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: "Sublima";
-    src: url("./Sublima-ExtraBold.otf");
+	font-weight: 700;
+	font-family: "Sublima";
+	src: url("./Sublima-ExtraBold.otf");
 }
 @font-face {
-    font-weight: 300;
-    font-family: "Sublima";
-    src: url("./Sublima-Light.otf");
+	font-weight: 300;
+	font-family: "Sublima";
+	src: url("./Sublima-Light.otf");
 }
 .logo {
-    font-family: 'SoyuzGrotesk', Helvetica, Arial, sans-serif;
-    font-size: 60px;
+	font-family: 'SoyuzGrotesk', Helvetica, Arial, sans-serif;
+	font-size: 60px;
 }
 .logo:hover, .logo:focus {
-    text-decoration: wavy underline;
+	text-decoration: wavy underline;
 }
