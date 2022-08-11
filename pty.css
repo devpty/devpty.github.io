@@ -50,11 +50,12 @@ body {
 	flex-direction: row;
 	flex-wrap: wrap;
 	font-size: 2em;
+	font-weight: 700;
 }
 #social-box > a {
 	padding-right: 32px;
 	color: #fff;
 }
-#social-box > a:hover, #social-box > a:focus {
-	text-decoration: none;
+#sitemap-root {
+	font-size: 1.25em;
 }

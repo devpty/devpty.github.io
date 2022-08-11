@@ -20,3 +20,18 @@
 .logo:hover, .logo:focus {
 	text-decoration: wavy underline;
 }
+fieldset {
+	border: 1px solid #fff;
+}
+legend {
+	font-size: 1.5em;
+}
+ul {
+	list-style: "→ ";
+}
+a {
+	color: #fff;
+}
+a:hover, a:focus {
+	text-decoration: none;
+}
