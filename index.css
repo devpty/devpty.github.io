@@ -36,3 +36,35 @@ body {
 	font-size: 30px;
 	color: #fff;
 }
+#ring-box {
+	position: absolute;
+	bottom: 24px;
+	left: 40px;
+	font-family: 'Sublima', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 30px;
+	color: #fff;
+}
+#ring-box > img {
+	margin-bottom: 16px;
+	margin-right: 32px;
+}
+#ring-box > iframe {
+	animation: 100ms linear 1 normal both running unwebring;
+	opacity: 0;
+	transition: opacity 100ms linear;
+}
+#ring-box:hover > iframe {
+	animation-name: webring;
+	opacity: 1;
+}
+@keyframes webring {
+	0% { margin-left: -600px; }
+	1% { margin-left: 0; }
+	100% { margin-left: 0; }
+}
+@keyframes unwebring {
+	0% { margin-left: 0; }
+	99% { margin-left: 0; }
+	100% { margin-left: -600px; }
+}
