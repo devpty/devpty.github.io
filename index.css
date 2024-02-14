@@ -1,10 +1,11 @@
 @import url("./assets/common.css");
 #video {
-	min-height: 100vh;
+	height: 100vh;
 }
 @media screen and (min-aspect-ratio: 4/3) {
 	#video {
-		min-width: 100vw;
+		width: 100vw;
+		height: unset;
 	}
 }
 #video-box {
@@ -13,8 +14,8 @@
 	justify-content: center;
 	overflow: hidden;
 	width: calc(100vw - 16px);
-	height: calc(100vh - 16px);
-    background-color: #000;
+	height: calc(100vh - 124px);
+	background-color: #000;
 }
 body {
 	background-color: #6940ff;
@@ -29,7 +30,7 @@ body {
 }
 #text-box {
 	position: absolute;
-	bottom: 24px;
+	bottom: 132px;
 	right: 40px;
 	font-family: 'Sublima', Helvetica, Arial, sans-serif;
 	font-weight: 300;
@@ -46,17 +47,41 @@ body {
 	color: #fff;
 }
 #ring-box > img {
-	margin-bottom: 16px;
-	margin-right: 32px;
+	display: none;
 }
 #ring-box > iframe {
-	animation: 100ms linear 1 normal both running unwebring;
-	opacity: 0;
-	transition: opacity 100ms linear;
+	position: fixed;
+	left: 8px;
+	width: calc(100vw - 16px);
+	bottom: 8px;
+	border: none;
 }
-#ring-box:hover > iframe {
-	animation-name: webring;
-	opacity: 1;
+@media screen and (min-width: 600px) {
+	#video-box {
+		height: calc(100vh - 16px);
+	}
+	#text-box {
+		bottom: 24px;
+	}
+	#ring-box > img {
+		display: unset;
+		margin-bottom: 16px;
+		margin-right: 32px;
+	}
+	#ring-box > iframe {
+		animation: 100ms linear 1 normal both running unwebring;
+		opacity: 0;
+		transition: opacity 100ms linear;
+		position: unset;
+		left: unset;
+		width: 400px;
+		bottom: unset;
+		border: 1px solid #6940ff
+	}
+	#ring-box:hover > iframe {
+		animation-name: webring;
+		opacity: 1;
+	}
 }
 @keyframes webring {
 	0% { margin-left: -600px; }
